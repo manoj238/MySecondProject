@@ -1,0 +1,10 @@
+package com.tec.designpatternsingleton;
+
+public class MainMovie {
+
+	public static void main(String[] args) {
+		Movies movies = Movies.bookTickets(10);
+		System.out.println(movies);
+	}
+
+}

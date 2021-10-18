@@ -1,0 +1,19 @@
+package com.tec.designpatterntemplate;
+
+public class Player extends Game {
+
+	@Override
+	void gameLoad() {
+		System.out.println("Player Started playing..!");
+	}
+
+	@Override
+	void gameStart() {
+		
+	}
+
+	@Override
+	void gameEnd() {
+		
+	}
+}

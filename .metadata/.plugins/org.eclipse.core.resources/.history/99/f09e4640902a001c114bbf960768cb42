@@ -1,0 +1,64 @@
+package com.techne.mvcdprojects.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+public class MyEmpoyeeJdbc implements EmployeeData {
+
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	ResultSet set = null;
+	Scanner scanner = new Scanner(System.in);
+	String dbUrl = "jdbc:mysql://localhost:3306/employee?user=root&password=root";
+	
+	
+	@Override
+	public void insert() {
+		System.out.println("Enter the Name:");
+		String name = scanner.next();
+		System.out.println("Enter the salary:");
+		double sal = scanner.nextDouble();
+		System.out.println("Enter the Address:");
+		String ads = scanner.next();
+		String query = "insert into employee.employee values(?,?,?,?)";
+		preparedStatement.setInt(1, );
+		preparedStatement.setString(2, name);
+		preparedStatement.setDouble(3, sal);
+		preparedStatement.setString(4, ads);
+		preparedStatement.executeUpdate();
+	}
+
+	@Override
+	public void update() {
+		System.out.println("Enter the Name to set and update the database");
+		String name = scanner.next();
+		String query = "update employee.employee set name = ? where id = ?";
+		preparedStatement.setInt(2, );
+		preparedStatement.setString(1, name);
+		preparedStatement.executeUpdate();
+	}
+
+	@Override
+	public void delete() {
+		String query = "delete from demo.student where id = ?";
+		preparedStatement.setInt(1, );
+		preparedStatement.executeUpdate();
+	}
+
+	@Override
+	public void fetch() {
+		String query = "select * from student where id = ?";
+		preparedStatement.setInt(1, );
+		set = preparedStatement.executeQuery();
+		while (set.next()) {
+			System.out.println("Id: "+set.getInt(1));
+			System.out.println("Name: "+set.getString(2));
+			System.out.println("Salary: "+set.getDouble(3));
+			System.out.println("Salary: "+set.getString(4));
+			System.out.println();
+		}
+	}
+
+}

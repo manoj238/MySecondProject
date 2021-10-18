@@ -1,0 +1,25 @@
+package com.techne.mvcdprojects.services;
+
+public class EmployeeServiceValidation implements EmployeeService {
+
+	@Override
+	public void insert() {
+
+	}
+
+	@Override
+	public void update() {
+
+	}
+
+	@Override
+	public void delete() {
+
+	}
+
+	@Override
+	public void fetch() {
+		
+	}
+
+}

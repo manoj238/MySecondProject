@@ -1,0 +1,7 @@
+package com.tec.designpatterntemplate;
+
+public abstract class Game {
+	
+	abstract void load();
+	
+}

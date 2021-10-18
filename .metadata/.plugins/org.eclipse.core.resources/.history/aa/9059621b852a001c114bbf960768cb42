@@ -1,0 +1,5 @@
+package com.techne.mvcdprojects.services;
+
+public interface EmployeeService {
+
+}

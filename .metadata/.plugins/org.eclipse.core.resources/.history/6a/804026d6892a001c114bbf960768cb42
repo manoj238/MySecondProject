@@ -1,0 +1,12 @@
+package com.techne.mvcdprojects.maintest;
+
+import com.techne.mvcdprojects.services.EmployeeServiceValidation;
+
+public class MainTest {
+
+	public static void main(String[] args) {
+		EmployeeServiceValidation validation = new EmployeeServiceValidation();
+		validation.insert();
+	}
+
+}

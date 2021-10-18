@@ -1,0 +1,7 @@
+package com.tec.designpatternfactory;
+
+public class FactoryCar {
+	public Car getCar() {
+		
+	}
+}

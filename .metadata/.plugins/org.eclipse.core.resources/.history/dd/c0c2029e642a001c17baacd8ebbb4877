@@ -1,0 +1,5 @@
+package com.tec.designpatternsingleton;
+
+public class Movies {
+
+}

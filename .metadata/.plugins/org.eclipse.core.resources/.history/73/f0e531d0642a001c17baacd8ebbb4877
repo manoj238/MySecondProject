@@ -1,0 +1,8 @@
+package com.tec.designpatternsingleton;
+
+public class Movies {
+	static int tickets = 50;
+	
+	public static Movies movie;
+	
+}

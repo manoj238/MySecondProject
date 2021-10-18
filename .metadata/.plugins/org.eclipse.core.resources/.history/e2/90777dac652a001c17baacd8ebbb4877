@@ -1,0 +1,9 @@
+package com.tec.designpatternsingleton;
+
+public class MainMovie {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

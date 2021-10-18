@@ -1,0 +1,18 @@
+package com.techne.mvcdprojects.dto;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.Data;
+
+@Data
+@Entity
+public class Employee implements Serializable{
+	@Id
+	private static int id;
+	private static String name;
+	private static double sal;
+	private static String address;
+}

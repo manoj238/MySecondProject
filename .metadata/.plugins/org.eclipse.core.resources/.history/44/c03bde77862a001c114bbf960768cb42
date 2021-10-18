@@ -1,0 +1,44 @@
+package com.techne.mvcdprojects.services;
+
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import com.techne.mvcdprojects.dto.Employee;
+
+public class EmployeeServiceValidation implements EmployeeService {
+
+	static Employee employee = new Employee();
+	static Scanner scanner = new Scanner(System.in);
+	static EntityManagerFactory factory = Persistence.createEntityManagerFactory("emp");
+	static EntityManager manager = factory.createEntityManager();
+	static EntityTransaction transaction = manager.getTransaction();
+	
+	@Override
+	public void insert() {
+		System.out.println("Enter the Id");
+		int id = scanner.nextInt();
+		Employee finding = manager.find(Employee.class, id);
+		if(finding==null) {
+			
+		}
+	}
+
+	@Override
+	public void update() {
+
+	}
+
+	@Override
+	public void delete() {
+
+	}
+
+	@Override
+	public void fetch() {
+		
+	}
+}

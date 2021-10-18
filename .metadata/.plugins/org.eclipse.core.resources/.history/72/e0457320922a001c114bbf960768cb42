@@ -1,0 +1,41 @@
+package com.techne.mvcdprojects.services;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+public class EmployeeServiceJdbc implements EmployeeService {
+
+	static String dbUrl = "jdbc:mysql://localhost:3306/employee?user=root&password=root";
+	static Scanner scanner = new Scanner(System.in);
+	static Connection connection = null;
+	static PreparedStatement statement = null;
+	static ResultSet set = null;
+	
+	public static int id;
+	@Override
+	public void insert() {
+		System.out.println("Enter the id to insert");
+		id = scanner.nextInt();
+		String query = "select * from student where id = ?";
+		statement = connection.prepareStatement(query);
+		set = preparedStatement.executeQuery();
+	}
+
+	@Override
+	public void update() {
+		
+	}
+
+	@Override
+	public void delete() {
+		
+	}
+
+	@Override
+	public void fetch() {
+		
+	}
+	
+}

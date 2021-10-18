@@ -1,0 +1,35 @@
+package com.techne.mvcdprojects.services;
+
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class EmployeeServiceJdbc implements EmployeeService {
+
+	static Scanner scanner = new Scanner(System.in);
+	static PreparedStatement statement = null;
+	
+	public static int id;
+	@Override
+	public void insert() {
+		System.out.println("Enter the id to insert");
+		id = scanner.nextInt();
+		String query = "select * from student where id = ?";
+		preparedStatement = connection.prepareStatement(query);
+	}
+
+	@Override
+	public void update() {
+		
+	}
+
+	@Override
+	public void delete() {
+		
+	}
+
+	@Override
+	public void fetch() {
+		
+	}
+	
+}

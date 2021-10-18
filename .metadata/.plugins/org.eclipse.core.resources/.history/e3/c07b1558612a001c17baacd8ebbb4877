@@ -1,0 +1,23 @@
+package com.tec.designpatternfactory;
+
+public class Audi implements Car {
+
+	@Override
+	public void start() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void accelerate() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void breakCar() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

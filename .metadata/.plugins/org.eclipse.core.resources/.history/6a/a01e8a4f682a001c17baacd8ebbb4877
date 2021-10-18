@@ -1,0 +1,7 @@
+package com.tec.designpatterntemplate;
+
+public class Player extends Game {
+
+	
+
+}

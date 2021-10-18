@@ -1,0 +1,5 @@
+package com.techne.mvcdprojects.dto;
+
+public class Employee {
+
+}

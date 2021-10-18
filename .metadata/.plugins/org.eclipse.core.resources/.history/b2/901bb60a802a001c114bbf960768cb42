@@ -1,0 +1,5 @@
+package com.techne.mvcdprojects.dao;
+
+public interface EmployeeData {
+
+}

@@ -1,0 +1,87 @@
+package com.techne.mvcdprojects.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.techne.mvcdprojects.services.EmployeeServiceJdbc;
+
+public class MyEmpoyeeJdbc implements EmployeeData {
+
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	ResultSet set = null;
+	Scanner scanner = new Scanner(System.in);
+	String dbUrl = "jdbc:mysql://localhost:3306/employee?user=root&password=root";
+	connection = DriverManager.getConnection(dbUrl);
+	
+	@Override
+	public void insert() {
+		System.out.println("Enter the Name:");
+		String name = scanner.next();
+		System.out.println("Enter the salary:");
+		double sal = scanner.nextDouble();
+		System.out.println("Enter the Address:");
+		String ads = scanner.next();
+		String query = "insert into employee.employee values(?,?,?,?)";
+		try {
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setInt(1, EmployeeServiceJdbc.id);
+			preparedStatement.setString(2, name);
+			preparedStatement.setDouble(3, sal);
+			preparedStatement.setString(4, ads);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void update() {
+		System.out.println("Enter the Name to set and update the database");
+		String name = scanner.next();
+		String query = "update employee.employee set name = ? where id = ?";
+		try {
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setInt(2, EmployeeServiceJdbc.id);
+			preparedStatement.setString(1, name);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void delete() {
+		String query = "delete from employee.employee where id = ?";
+		try {
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setInt(1, EmployeeServiceJdbc.id);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void fetch() {
+		String query = "select * from employee.employee where id = ?";
+		try {
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setInt(1, EmployeeServiceJdbc.id);
+			set = preparedStatement.executeQuery();
+			while (set.next()) {
+				System.out.println("Id: "+set.getInt(1));
+				System.out.println("Name: "+set.getString(2));
+				System.out.println("Salary: "+set.getDouble(3));
+				System.out.println("Salary: "+set.getString(4));
+				System.out.println();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
